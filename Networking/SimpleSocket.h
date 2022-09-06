@@ -13,21 +13,16 @@ namespace pg {
     class SimpleSocket {
     private:
         struct sockaddr_in address;
-        int socket;
+        int sock;
         int connection;
     public:
         SimpleSocket(int domain, int service, int protocol, int port, uint32_t interface);
-        virtual int connectToNetwork(int socket, struct sockaddr_in address) =0;
+        virtual int connectToNetwork(int, struct sockaddr_in) =0;
         void testConnection(int );
-        struct sockaddr_in getAddress() {
-            return address;
-        }
-        int getSocket()   {
-            return socket;
-        };
-        int getConnection() {
-            return connection;
-        }
+        struct sockaddr_in getAddress();
+        int getSocket();
+        int getConnection();
+        void setConnection(int);
     };
 
 } // pg

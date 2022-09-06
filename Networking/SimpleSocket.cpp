@@ -10,10 +10,8 @@ namespace pg {
         address.sin_port = htons(port); //to convert port to network order
         address.sin_addr.s_addr = htonl(interface);
 
-        socket = socket(domain, service, protocol);
-        testConnection(socket);
-        connection = connectToNetwork(socket, address);
-        testConnection(connection);
+        sock = socket(domain, service, protocol);
+        testConnection(sock);
     }
 
     void SimpleSocket::testConnection(int toTest) {
@@ -21,5 +19,17 @@ namespace pg {
             perror("connection failed");
             exit(EXIT_FAILURE);
         }
+    }
+    struct sockaddr_in SimpleSocket::getAddress() {
+        return address;
+    }
+    int SimpleSocket::getSocket()   {
+        return sock;
+    };
+    int SimpleSocket::getConnection() {
+        return connection;
+    }
+    void SimpleSocket::setConnection(int conn) {
+        connection = conn;
     }
 }
