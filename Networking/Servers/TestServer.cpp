@@ -1,0 +1,32 @@
+//
+// Created by paul on 06.09.22.
+//
+
+#include "TestServer.h"
+
+namespace pg {
+    void TestServer::accepter() {
+        struct sockaddr_in address = getSocket()->getAddress();
+        uint addresslen = sizeof(address);
+        newSocket = accept(getSocket()->getSocket(), (struct sockaddr*)&address, (socklen_t*)&addresslen);
+        read(newSocket, buffer, 30000);
+    }
+
+    void TestServer::handler() {
+        std::cout<<buffer<<std::endl;
+    }
+    void TestServer::responder() {
+        char* hello = "Hello from Server";
+        write(newSocket, hello, strlen(hello));
+        close(newSocket);
+    }
+    void TestServer::launche() {
+        while (1)   {
+            std::cout<<"###waiting###\n";
+            accepter();
+            handler();
+            responder();
+            std::cout<<"###done###\n";
+        }
+    }
+} // pg
