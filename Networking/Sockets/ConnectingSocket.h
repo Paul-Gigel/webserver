@@ -7,6 +7,7 @@
 #include "SimpleSocket.h"
 namespace pg {
     class ConnectingSocket : public SimpleSocket{
+    public:
         ConnectingSocket(int domain, int service, int protocol, int port, uint32_t interface);
         int connectToNetwork(int, struct sockaddr_in);
     };

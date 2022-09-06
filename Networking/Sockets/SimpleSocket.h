@@ -14,15 +14,15 @@ namespace pg {
     private:
         struct sockaddr_in address;
         int sock;
-        int connection;
+        //int connection;
     public:
         SimpleSocket(int domain, int service, int protocol, int port, uint32_t interface);
         virtual int connectToNetwork(int, struct sockaddr_in) =0;
         void testConnection(int );
         struct sockaddr_in getAddress();
         int getSocket();
-        int getConnection();
-        void setConnection(int);
+        //int getConnection();
+        //void setConnection(int);
     };
 
 } // pg

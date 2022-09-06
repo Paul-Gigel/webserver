@@ -26,10 +26,10 @@ namespace pg {
     int SimpleSocket::getSocket()   {
         return sock;
     };
-    int SimpleSocket::getConnection() {
+/*    int SimpleSocket::getConnection() {
         return connection;
     }
     void SimpleSocket::setConnection(int conn) {
         connection = conn;
-    }
+    }*/
 }

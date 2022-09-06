@@ -9,8 +9,7 @@ namespace pg    {
     SimpleSocket(domain, service, protocol, port, interface)
     {
         int connection = connectToNetwork(getSocket(), getAddress());
-        setConnection(connection);
-        testConnection(getConnection());
+        testConnection(connection);
     };
     int ConnectingSocket::connectToNetwork(int sock, struct sockaddr_in address) {
         return connect(sock, (struct sockaddr*)&address, sizeof(address));
