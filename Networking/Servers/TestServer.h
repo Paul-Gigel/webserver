@@ -5,19 +5,21 @@
 #ifndef WEBSERVER_TESTSERVER_H
 #define WEBSERVER_TESTSERVER_H
 #include "SimpleServer.h"
-#include "unistd.h"
+#include <unistd.h>
+#include <stdio.h>
+#include <string.h>
 namespace pg {
 
     class TestServer :public SimpleServer{
     private:
         char buffer[30000];
         int newSocket;
-        void accepter() override;
-        void handler() override;
-        void responder() override;
+        void accepter();
+        void handler();
+        void responder();
     public:
         TestServer();
-        void launche() override;
+        void launche();
     };
 
 } // pg

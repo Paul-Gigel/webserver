@@ -3,15 +3,17 @@
 //
 
 #include "TestServer.h"
-
+//SimpleServer(AF_INET, SOCK_STREAM, 0, 80, INADDR_ANY, 10)
 namespace pg {
+    TestServer::TestServer() : SimpleServer(AF_INET, SOCK_STREAM, 0, 81, INADDR_ANY, 10){
+        launche();
+    }
     void TestServer::accepter() {
         struct sockaddr_in address = getSocket()->getAddress();
         uint addresslen = sizeof(address);
         newSocket = accept(getSocket()->getSocket(), (struct sockaddr*)&address, (socklen_t*)&addresslen);
         read(newSocket, buffer, 30000);
     }
-
     void TestServer::handler() {
         std::cout<<buffer<<std::endl;
     }
