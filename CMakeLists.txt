@@ -4,7 +4,6 @@ project(webserver)
 set(CMAKE_CXX_STANDARD 14)
 
 add_executable(test
-        #Networking/Sockets/test.cpp
         Networking/Servers/test.cpp
         Networking/Servers/SimpleServer.h
         Networking/Servers/SimpleServer.cpp

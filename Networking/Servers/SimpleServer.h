@@ -11,7 +11,7 @@ namespace pg {
     private:
         ListeningSocket* sock;
     public:
-        SimpleServer(int domain, int service, int protocol, int port, uint32_t interface, int bklg);
+        SimpleServer(int domain, int service, int protocol, short port, uint32_t interface, int bklg);
         ~SimpleServer();
         virtual void accepter() =0;
         virtual void handler() =0;

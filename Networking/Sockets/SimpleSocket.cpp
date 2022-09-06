@@ -5,7 +5,7 @@
 #include "SimpleSocket.h"
 
 namespace pg {
-    SimpleSocket::SimpleSocket(int domain, int service, int protocol, int port, uint32_t interface) {
+    SimpleSocket::SimpleSocket(int domain, int service, int protocol, short port, uint32_t interface) {
         address.sin_family = domain;
         address.sin_port = htons(port); //to convert port to network order
         address.sin_addr.s_addr = htonl(interface);

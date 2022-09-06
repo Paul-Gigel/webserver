@@ -5,7 +5,7 @@
 #include "TestServer.h"
 //SimpleServer(AF_INET, SOCK_STREAM, 0, 80, INADDR_ANY, 10)
 namespace pg {
-    TestServer::TestServer() : SimpleServer(AF_INET, SOCK_STREAM, 0, 81, INADDR_ANY, 10){
+    TestServer::TestServer() : SimpleServer(AF_INET, SOCK_STREAM, 0, 8080, INADDR_ANY, 10){
         launche();
     }
     void TestServer::accepter() {
@@ -26,8 +26,11 @@ namespace pg {
         while (1)   {
             std::cout<<"###waiting###\n";
             accepter();
+            std::cout<<"###1###\n";
             handler();
+            std::cout<<"###2###\n";
             responder();
+            std::cout<<"###3###\n";
             std::cout<<"###done###\n";
         }
     }
