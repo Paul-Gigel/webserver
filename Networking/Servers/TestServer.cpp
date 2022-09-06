@@ -26,11 +26,8 @@ namespace pg {
         while (1)   {
             std::cout<<"###waiting###\n";
             accepter();
-            std::cout<<"###1###\n";
             handler();
-            std::cout<<"###2###\n";
             responder();
-            std::cout<<"###3###\n";
             std::cout<<"###done###\n";
         }
     }
