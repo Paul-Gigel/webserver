@@ -5,7 +5,7 @@
 #include "TestServer.h"
 //SimpleServer(AF_INET, SOCK_STREAM, 0, 80, INADDR_ANY, 10)
 namespace pg {
-    TestServer::TestServer() : SimpleServer(AF_INET, SOCK_STREAM, 0, 8080, INADDR_ANY, 10){
+    TestServer::TestServer() : SimpleServer(AF_INET, SOCK_STREAM, 0, 80, INADDR_ANY, 10){
         launche();
     }
     void TestServer::accepter() {
