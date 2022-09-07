@@ -5,8 +5,8 @@
 #include "TestServer.h"
 //SimpleServer(AF_INET, SOCK_STREAM, 0, 80, INADDR_ANY, 10)
 namespace pg {
-    TestServer::TestServer() : SimpleServer(AF_INET, SOCK_STREAM, 0, 80, INADDR_ANY, 10){
-        launche();
+    TestServer::TestServer(struct in_addr inAddress) : SimpleServer(AF_INET, SOCK_STREAM, 0, 80, inAddress.s_addr, 10){
+
     }
     void TestServer::accepter() {
         struct sockaddr_in address = getSocket()->getAddress();

@@ -18,7 +18,7 @@ namespace pg {
         void handler();
         void responder();
     public:
-        TestServer();
+        TestServer(struct in_addr);
         void launche();
     };
 

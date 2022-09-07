@@ -1,6 +1,8 @@
 #include "TestServer.h"
 int main()  {
-    pg::TestServer t;
+    struct in_addr ipadress;
+    ipadress.s_addr = 0xc0a8b23c;
+    pg::TestServer t(ipadress);
 
     return 0;
 }
