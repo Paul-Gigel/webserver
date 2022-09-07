@@ -22,13 +22,13 @@ namespace pg {
         write(newSocket, hello, strlen(hello));
         close(newSocket);
     }
-    void TestServer::launche() {
-        while (1)   {
-            std::cout<<"###waiting###\n";
+    void TestServer::launche(uint count) {
+        for (uint i = 0; i < count; i++) {
+            std::cout<<"###waiting###"<<count<<std::endl;
             accepter();
             handler();
             responder();
-            std::cout<<"###done###\n";
+            std::cout<<"###done###"<<count<<std::endl;
         }
     }
 } // pg

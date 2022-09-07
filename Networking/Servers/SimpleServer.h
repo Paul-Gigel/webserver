@@ -16,7 +16,7 @@ namespace pg {
         virtual void accepter() =0;
         virtual void handler() =0;
         virtual void responder() =0;
-        virtual void launche() =0;
+        virtual void launche(uint) =0;
 
         ListeningSocket* getSocket();
     };

@@ -19,7 +19,7 @@ namespace pg {
         void responder();
     public:
         TestServer(struct in_addr);
-        void launche();
+        void launche(uint count);
     };
 
 } // pg
