@@ -5,16 +5,15 @@
 #include "TestClient.h"
 
 namespace pg {
-    template<typename T>
-    TestClient<T>::TestClient(struct in_addr serverAddress) : SimpleClient<T>(AF_INET, SOCK_STREAM, 0, 80, serverAddress.s_addr){
-        read(this->getSocket(), this->resBuffer, sizeof(this->resBuffer));
-    }
-    template<typename T>
-    T &TestClient<T>::readMessage() {
+    TestClient::TestClient(struct in_addr serverAddress) :
+    SimpleClient(AF_INET, SOCK_STREAM, 0, 80, serverAddress.s_addr){}
 
+    std::string& TestClient::readMessage(std::string& buffer) {
+        read(this->getSocket(), data, 1024);
+        buffer.assign((char*)&data, 1024);
+        return buffer;
     }
-    template<typename T>
-    void TestClient<T>::sendMessage(T) {
-        send(this->getSocket(), Message, sizeof(Message), 0);
+    void TestClient::sendMessage(const std::string& Message) const{
+        send(this->getSocket(), Message.c_str(), sizeof(Message), 0);
     }
 } // pg

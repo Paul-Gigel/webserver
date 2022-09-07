@@ -5,8 +5,7 @@
 #include "SimpleClient.h"
 
 namespace pg {
-    template<typename T>
-    SimpleClient<T>::SimpleClient(int domain, int service, int protocol, short port, uint32_t interface) :
+    SimpleClient::SimpleClient(int domain, int service, int protocol, short port, uint32_t interface) :
     ConnectingSocket(domain, service, protocol, port, interface) {}
 
 } // pg

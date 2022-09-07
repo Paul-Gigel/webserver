@@ -7,16 +7,14 @@
 #include "SimpleClient.h"
 #include <string>
 namespace pg {
-    template<typename T>
-    class TestClient : public SimpleClient<T>{
+    class TestClient : public SimpleClient{
     private:
-        T Message;
+        void* data;
+        size_t dataSize;
     public:
         TestClient(struct in_addr);
-        void sendMessage(T);
-        T& readMessage();
+        void sendMessage(const std::string&)const;
+        std::string& readMessage(std::string&);
     };
-typedef TestClient<std::string> TestClientString;
 } // pg
-
 #endif //WEBSERVER_TESTCLIENT_H

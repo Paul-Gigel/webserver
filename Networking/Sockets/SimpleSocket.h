@@ -20,7 +20,7 @@ namespace pg {
         virtual int connectToNetwork(int, struct sockaddr_in) =0;
         void testConnection(int );
         struct sockaddr_in getAddress();
-        int getSocket();
+        int getSocket() const;
         //int getConnection();
         //void setConnection(int);
     };

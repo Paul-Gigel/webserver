@@ -23,7 +23,7 @@ namespace pg {
     struct sockaddr_in SimpleSocket::getAddress() {
         return address;
     }
-    int SimpleSocket::getSocket()   {
+    int SimpleSocket::getSocket() const{
         return sock;
     };
 /*    int SimpleSocket::getConnection() {
