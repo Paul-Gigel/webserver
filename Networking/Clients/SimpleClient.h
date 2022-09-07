@@ -4,8 +4,7 @@
 
 #ifndef WEBSERVER_SIMPLECLIENT_H
 #define WEBSERVER_SIMPLECLIENT_H
-#include <iostream>
-#include <string>
+#include <unistd.h>
 #include <sys/socket.h>
 #include <netinet/in.h>
 #include "../Sockets/ConnectingSocket.h"
@@ -20,7 +19,7 @@ template<typename T>
     public:
         SimpleClient(int domain, int service, int protocol, short port, uint32_t interface);
         virtual void sendMessage(T) =0;
-        virtual T readMessage(void) =0;
+        virtual T& readMessage() =0;
     };
 
 } // pg
