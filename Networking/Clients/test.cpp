@@ -4,9 +4,10 @@
 int main()  {
     struct in_addr addr;
     addr.s_addr = 0xc0a8b23c;
+    std::string buffer;
     pg::TestClient testClient(addr);
     testClient.sendMessage("HelloWorld");
-    /*std::cout<<testClient.readMessage()<<"\n";
-    *///pg::SimpleClient<std::string> simpleClient(AF_INET, SOCK_STREAM, 0, 80, 0xc0a8b23c);
+    testClient.readMessage(buffer);
+    std::cout<<buffer<<std::endl;
     return 0;
 }

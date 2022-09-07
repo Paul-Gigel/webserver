@@ -17,7 +17,7 @@ namespace pg {
     public:
         SimpleClient(int domain, int service, int protocol, short port, uint32_t interface);
         virtual void sendMessage(const std::string&) const =0;
-        virtual std::string& readMessage(std::string&) =0;
+        virtual void readMessage(std::string&) =0;
     };
 
 } // pg

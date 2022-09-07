@@ -9,12 +9,11 @@
 namespace pg {
     class TestClient : public SimpleClient{
     private:
-        void* data;
-        size_t dataSize;
+        char data[1024];
     public:
         TestClient(struct in_addr);
         void sendMessage(const std::string&)const;
-        std::string& readMessage(std::string&);
+        void readMessage(std::string&);
     };
 } // pg
 #endif //WEBSERVER_TESTCLIENT_H
