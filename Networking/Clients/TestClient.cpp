@@ -13,6 +13,6 @@ namespace pg {
         buffer= data;
     }
     void TestClient::sendMessage(const std::string& Message) const{
-        send(this->getSocket(), Message.c_str(), sizeof(Message), 0);
+        send(this->getSocket(), Message.c_str(), Message.length(), 0);
     }
 } // pg
