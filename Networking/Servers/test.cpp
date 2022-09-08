@@ -1,7 +1,7 @@
 #include "TestServer.h"
 int main()  {
     struct in_addr ipadress;
-    ipadress.s_addr = 0xc0a8b23c;
+    ipadress.s_addr = INADDR_ANY;
     pg::TestServer t(ipadress);
     t.launche(10);
 

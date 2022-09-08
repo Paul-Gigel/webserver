@@ -2,7 +2,7 @@ cmake_minimum_required(VERSION 3.22)
 project(webserver)
 
 set(CMAKE_CXX_STANDARD 23)
-
+#cmake -G 'Unix Makefiles' -B ./testbuild/
 add_executable(testServer
         Networking/Servers/test.cpp
         Networking/Servers/SimpleServer.h
